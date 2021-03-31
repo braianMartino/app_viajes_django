@@ -11,9 +11,14 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+MEDIA_ROOT= BASE_DIR / 'www/uploaded' #U: donde suben las imagenes via upload
+os.makedirs(MEDIA_ROOT, exist_ok=True) #A: creamos el dir si no existia
+MEDIA_URL= 'uploaded/' #U: aca se muestran
 
 
 # Quick-start development settings - unsuitable for production
