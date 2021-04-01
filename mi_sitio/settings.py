@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'corsheaders', 
    	'rest_framework',
 
 		'app_viajes',
@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'mi_sitio.urls'
@@ -132,3 +133,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
+
+#VER: https://github.com/adamchainz/django-cors-headers
+CORS_URLS_REGEX = r'^/api/.*$' #A: solo enviamos CORS allow para request a la api
+CORS_ALLOW_ALL_ORIGINS= True #A:SEC: OjO! permitimos todos porque estamos filtrando con CORS_URLS_REGEX
