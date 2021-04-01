@@ -15,6 +15,6 @@ urlpatterns = (
 			path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 	] + 
 	static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + #A: imagenes subidas para lugar
-	static('app/', document_root=settings.BASE_DIR / 'app_viajes_browser/static' ) #A: la app react
+	static('app/', document_root=settings.BASE_DIR / '../app_viajes_react/static' ) #A: la app react
 )
 
