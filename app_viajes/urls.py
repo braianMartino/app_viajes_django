@@ -6,6 +6,7 @@ import app_viajes.views as views
 
 router = routers.DefaultRouter()
 router.register(r'lugar', views.LugarViewSet)
+router.register(r'favorito', views.FavoritoViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
