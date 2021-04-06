@@ -27,6 +27,9 @@ class Favorito(models.Model): #U: cuando a una persona le interesa un lugar
 	de_quien= models.ForeignKey('auth.User', on_delete=models.CASCADE)
 	fh_creado= models.DateTimeField(default=timezone.now)
 
+	class Meta:
+		unique_together = ('lugar', 'de_quien')
+
 	def __str__(self):
 		return f'a {self.de_quien.username} le interesa {self.lugar.nombre}'
 	
